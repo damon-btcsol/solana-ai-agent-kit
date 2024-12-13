@@ -7,11 +7,11 @@ from metaplex.utils import create_master_edition
 from metaplex.authorization import get_metadata_account
 from rsa import PublicKey
 from solana.transaction import Transaction
+from solana.system_program import create_account, CreateAccountParams
 from solana.rpc.commitment import Confirmed
 import base58
 
 from solana_agentkit.agent.solana_agent import SolanaAgent
-from solana_agentkit.types.account import CreateAccountParams, create_account
 
 @dataclass
 class Creator:
