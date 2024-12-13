@@ -1,0 +1,2 @@
+[console_scripts]
+solana-agentkit = solana_agentkit.cli:main
