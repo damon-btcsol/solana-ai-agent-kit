@@ -2,9 +2,9 @@
 
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass
-from metaplex.metadata import create_metadata_account_v3
-from metaplex.utils import create_master_edition
-from metaplex.metadata import get_metadata_account
+from metaplex.metadata import create_metadata_account_v3 # type: ignore
+from metaplex.utils import create_master_edition # type: ignore
+from metaplex.metadata import get_metadata_account # type: ignore
 from rsa import PublicKey
 from solana.transaction import Transaction
 

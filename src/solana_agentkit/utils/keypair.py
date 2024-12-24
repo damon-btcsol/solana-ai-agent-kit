@@ -10,7 +10,18 @@ from pathlib import Path
 import logging
 
 from tests.test_agent import keypair
+import base58
+from solders.keypair import Keypair  # type: ignore
+from solders.pubkey import Pubkey  # type: ignore
 
+keypair = Keypair()
+
+public_key = keypair.pubkey()
+print("Public Key:", public_key)
+
+secret_key = keypair.secret()
+secret_key_base58 = base58.b58encode(secret_key)
+print("Secret Key(Base58):", secret_key_base58.decode("utf-8"))
 logger = logging.getLogger(__name__)
 
 @dataclass
@@ -20,7 +31,7 @@ class KeypairInfo:
     secret_key: str
     path: Optional[str] = None
 
-def generate_keypair() -> keypair:
+def generate_keypair() -> Keypair:
     """
     Generate a new random keypair.
     
@@ -29,7 +40,7 @@ def generate_keypair() -> keypair:
     """
     return keypair()
 
-def keypair_from_seed(seed: Union[str, bytes]) -> keypair:
+def keypair_from_seed(seed: Union[str, bytes]) -> Keypair:
     """
     Create a keypair from a seed.
     
@@ -50,7 +61,7 @@ def keypair_from_seed(seed: Union[str, bytes]) -> keypair:
         
     return keypair.from_seed(seed)
 
-def load_keypair(path: Union[str, Path]) -> keypair:
+def load_keypair(path: Union[str, Path]) -> Keypair:
     """
     Load a keypair from a file.
     
@@ -87,7 +98,7 @@ def load_keypair(path: Union[str, Path]) -> keypair:
         raise
 
 def save_keypair(
-    keypair: keypair,
+    keypair: Keypair,
     path: Union[str, Path],
     format: str = 'json'
 ) -> None:
@@ -121,9 +132,9 @@ def save_keypair(
         raise
 
 def create_deterministic_keypair(
-    base_keypair: keypair,
+    base_keypair: Keypair,
     index: int
-) -> keypair:
+) -> Keypair:
     """
     Create a deterministic keypair from a base keypair and index.
     
@@ -147,7 +158,7 @@ class KeypairManager:
     def add_keypair(
         self,
         name: str,
-        keypair: Union[keypair, str, Path],
+        keypair: Union[Keypair, str, Path],
         save: bool = True
     ) -> KeypairInfo:
         """Add a keypair to the manager."""
@@ -166,7 +177,7 @@ class KeypairManager:
         self.keypairs[name] = info
         return info
         
-    def get_keypair(self, name: str) -> Optional[keypair]:
+    def get_keypair(self, name: str) -> Optional[Keypair]:
         """Get a keypair by name."""
         info = self.keypairs.get(name)
         if info:
@@ -192,7 +203,7 @@ class KeypairDerivation:
     """Utility class for keypair derivation patterns."""
     
     @staticmethod
-    def from_phrase(phrase: str, salt: Optional[str] = None) -> keypair:
+    def from_phrase(phrase: str, salt: Optional[str] = None) -> Keypair:
         """Create keypair from a phrase."""
         seed = phrase.encode()
         if salt:
@@ -201,9 +212,9 @@ class KeypairDerivation:
     
     @staticmethod
     def create_hierarchical(
-        master: keypair,
+        master: Keypair,
         path: list[int]
-    ) -> keypair:
+    ) -> Keypair:
         """Create hierarchical deterministic keypair."""
         current = master
         for index in path:

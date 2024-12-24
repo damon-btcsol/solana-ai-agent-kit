@@ -53,3 +53,7 @@ sphinx-autodoc-typehints==2.4.4
 langchain-openai==0.2.4
 langgraph==0.2.39
 tweepy==4.14.0
+construct==2.10.67
+anchorpy
+spl
+solders
