@@ -8,7 +8,7 @@ from solders.pubkey import Pubkey  # type: ignore
 from solana_agentkit.agent import SolanaAgentKit
 from solana_agentkit.tools import create_image
 from solana_agentkit.utils import toJSON
-from solana_agentkit.meteora_dlmm.types import ActivationType
+from solana_agentkit.meteora.types import ActivationType
 
 
 class SolanaBalanceTool(BaseTool):

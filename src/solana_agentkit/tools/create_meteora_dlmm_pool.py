@@ -6,7 +6,7 @@ from spl.token.client import Token
 
 from solana_agentkit.agent import SolanaAgentKit
 from solana_agentkit.utils import meteora_dlmm as DLMM
-from solana_agentkit.meteora_dlmm.types import ActivationType
+from solana_agentkit.meteora.types import ActivationType
 
 
 class MeteoraManager:

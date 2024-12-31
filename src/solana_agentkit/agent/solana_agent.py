@@ -19,7 +19,7 @@ from solders.pubkey import Pubkey  # type: ignore
 
 from solana_agentkit.constants.constants import DEFAULT_OPTIONS
 from solana_agentkit.types import PumpfunTokenOptions
-from solana_agentkit.meteora_dlmm.types import ActivationType
+from solana_agentkit.meteora.types import ActivationType
 
 @dataclass
 class CollectionOptions:
