@@ -1,12 +1,7 @@
-# src/solana_agentkit/langchain/tools.py
-
 from typing import Optional, Dict, Any, List
 from langchain.tools import Tool
-
 import json
-
 from rsa import PublicKey
-
 from solana_agentkit.agent.solana_agent import PumpFunTokenOptions
 from ..utils.toJSON import parse_json_input
 from ..agent.base import BaseSolanaAgent
@@ -176,7 +171,7 @@ class SolanaDeployTokenTool(Tool):
                 "message": str(error),
                 "code": getattr(error, 'code', 'UNKNOWN_ERROR')
             })
-    # src/solana_agentkit/langchain/tools.py (continued)
+
 class SolanaRequestFundsTool(Tool):
     """Tool for requesting SOL from faucet."""
     

@@ -2,16 +2,17 @@
 
 from typing import Dict, List, Optional, Any
 from dataclasses import dataclass
-from metaplex.metadata import create_metadata_account_v3
-from metaplex.utils import create_master_edition
-from metaplex.authorization import get_metadata_account
+from metaplex.metadata import create_metadata_account_v3 # type: ignore
+from metaplex.utils import create_master_edition # type: ignore
+from metaplex.metadata import get_metadata_account # type: ignore
 from rsa import PublicKey
 from solana.transaction import Transaction
-from solana.system_program import create_account, CreateAccountParams
+
 from solana.rpc.commitment import Confirmed
 import base58
 
 from solana_agentkit.agent.solana_agent import SolanaAgent
+from solana_agentkit.types.account import CreateAccountParams, create_account
 
 @dataclass
 class Creator:

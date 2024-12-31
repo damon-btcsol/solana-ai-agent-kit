@@ -8,7 +8,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="solana-agentkit",
-    version="0.1.0",
+    version="0.1.2",  # Increment this version number
     description="A Python toolkit for building AI agents on Solana",
     long_description=long_description,
     long_description_content_type="text/markdown",
