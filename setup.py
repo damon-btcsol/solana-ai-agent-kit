@@ -7,12 +7,12 @@ this_directory = Path(__file__).parent
 long_description = (this_directory / "README.md").read_text()
 
 setup(
-    name="solana-agentkit",
-    version="0.1.2",  # Increment this version number
+    name="solana_agentkit",
+    version="0.1.3",  # Increment this version number
     description="A Python toolkit for building AI agents on Solana",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    author="Arhan SUbaşı",
+    author="Arhan Subaşı",
     author_email="subasiarhan3@gmail.com",
     url="https://github.com/arhansuba/solana-agentkit",
     packages=find_packages(where="src"),
