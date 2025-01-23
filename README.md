@@ -1,6 +1,6 @@
 # Solana AgentKit Documentation
 
-Welcome to the Solana AgentKit documentation! This Python package provides tools and utilities for building AI agents that can interact with the Solana blockchain.
+Welcome to the Solana AgentKit documentation! This Python package offers a robust toolkit for building AI-powered agents capable of interacting seamlessly with the Solana blockchain.
 
 ## Quick Start
 
@@ -21,9 +21,8 @@ pip install solana-agentkit[docs]
 
 ```python
 from solana_agentkit import SolanaAgent
-from solana_agentkit.tools import transfer_tokens, get_balance
 
-# Initialize agent
+# Initialize the agent
 agent = SolanaAgent(
     private_key="your_private_key",
     rpc_url="https://api.mainnet-beta.solana.com"
@@ -45,36 +44,35 @@ print(f"Transfer successful: {result.signature}")
 
 ### Core Components
 
-- **Agent Framework**: Build and deploy AI agents on Solana
-- **Transaction Tools**: Simplified transaction creation and management
-- **NFT Utilities**: Create and manage NFT collections
-- **Token Tools**: Deploy and manage SPL tokens
-- **Domain Management**: Register and manage .sol domains
+- **Agent Framework**: Easily build and deploy AI agents on Solana.
+- **Transaction Tools**: Simplified methods for creating and managing transactions.
+- **NFT Utilities**: Tools for creating and managing NFT collections.
+- **Token Tools**: Deploy and manage SPL tokens with ease.
+- **Domain Management**: Register and manage `.sol` domains.
 
 ### AI Integration
 
-- LangChain integration for AI capabilities
-- OpenAI integration for image generation
-- Custom agent behaviors and personalities
-- Natural language processing for commands
+- **LangChain Support**: Integrate advanced AI capabilities.
+- **OpenAI Integration**: Use AI for image generation and natural language processing.
+- **Custom Behaviors**: Define agent-specific personalities and tasks.
+- **Command Understanding**: Enable natural language commands for blockchain operations.
 
 ### Blockchain Features
 
-- Wallet management
-- Transaction building
-- Priority fee handling
-- Multi-signature support
+- Wallet management and transaction building.
+- Priority fee handling for faster transactions.
+- Multi-signature support for enhanced security.
 
 ## Development
 
-### Setup Development Environment
+### Setting Up the Development Environment
 
 ```bash
-# Clone repository
+# Clone the repository
 git clone https://github.com/arhansuba/solana-agentkit
 cd solana-agentkit
 
-# Create virtual environment
+# Create a virtual environment
 python -m venv venv
 source venv/bin/activate  # Unix
 # or
@@ -94,9 +92,13 @@ pytest tests/
 pytest --cov=solana_agentkit tests/
 ```
 
-### Code Style
+### Code Formatting and Linting
 
-We use Black for code formatting and isort for import sorting:
+We enforce consistent code quality with:
+
+- **Black** for code formatting.
+- **isort** for import sorting.
+- **Pre-commit Hooks**: Ensure all code changes meet the project's quality standards.
 
 ```bash
 # Format code
@@ -120,132 +122,49 @@ solana-agentkit/
 └── examples/          # Usage examples
 ```
 
-## Missing Core Features:
+## Planned Features
 
-plaintextCopysolana_agentkit/
-├── protocols/            # New module for additional DeFi protocols
-│   ├── jupiter/         # Jupiter DEX integration
-│   ├── orca/           # Orca DEX integration
-│   └── solend/         # Lending protocol integration
-├── analytics/           # New module for on-chain analytics
-│   ├── price/          # Price analysis and feeds
-│   ├── volume/         # Volume analysis
-│   └── metrics/        # General protocol metrics
-├── security/           # New module for security features
-│   ├── validation/     # Input validation
-│   └── verification/   # Transaction verification
-└── monitoring/         # New module for monitoring
-    ├── events/         # Event monitoring
-    └── alerts/         # Alert system
+### Protocol Integrations
 
-Missing Tool Categories:
+- **DEX Integration**: Jupiter and Orca for seamless trading.
+- **Lending**: Solend integration for borrowing and lending.
+- **Staking**: Marinade integration for liquid staking.
 
-plaintextCopysolana_agentkit/tools/
-├── defi/               # DeFi-specific tools
-│   ├── yield_farming.py
-│   └── liquidity_mining.py
-├── governance/         # Governance tools
-│   ├── proposal.py
-│   └── vote.py
-├── analytics/          # Analytics tools
-│   ├── market_analysis.py
-│   └── portfolio_tracking.py
-└── automation/         # Automation tools
-    ├── strategy.py
-    └── scheduler.py
+### Analytics and Monitoring
 
-Utility Enhancements:
+- **On-Chain Metrics**: Price feeds, market volume, and portfolio tracking.
+- **Alerts**: Event-based monitoring and notifications.
 
-plaintextCopysolana_agentkit/utils/
-├── cache/             # Caching utilities
-├── rate_limiting/     # Rate limiting
-├── error_handling/    # Enhanced error handling
-└── logging/          # Logging utilities
+### Security Enhancements
 
-Testing Infrastructure:
+- Input validation framework.
+- Transaction simulation and risk assessment.
+- Advanced rate limiting and error handling.
 
-plaintextCopytests/
-├── unit/             # Unit tests
-├── integration/      # Integration tests
-├── e2e/             # End-to-end tests
-└── fixtures/        # Test fixtures
+### Advanced Tools
 
-Documentation:
-
-plaintextCopydocs/
-├── api/             # API documentation
-├── tutorials/       # Usage tutorials
-├── examples/        # Example implementations
-└── protocols/       # Protocol documentation
-Key missing features:
-
-Protocol Integrations:
-
-
-Jupiter integration for optimal routing
-Orca integration for concentrated liquidity
-Solend integration for lending operations
-Marinade integration for liquid staking
-
-
-Analytics & Monitoring:
-
-
-Price feed integration
-Market analytics
-Portfolio tracking
-Event monitoring
-Alert system
-
-
-Enhanced Security:
-
-
-Input validation framework
-Transaction simulation
-Risk assessment
-Rate limiting
-
-
-Advanced Tools:
-
-
-Yield farming strategies
-Liquidity mining tools
-Portfolio management
-Governance integration
-Automated trading strategies
-
-
-Infrastructure:
-
-
-Caching system
-Error handling framework
-Logging system
-Rate limiting
-Performance monitoring
+- Yield farming and liquidity mining utilities.
+- Governance tools for proposal creation and voting.
+- Automation modules for trading and portfolio rebalancing.
 
 ## Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+We welcome contributions from the community! To get started:
 
-## License
+1. Fork the repository.
+2. Create your feature branch:
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m 'Add amazing feature'
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+5. Open a Pull Request for review.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Support
-
-- GitHub Issues: [Report bugs](https://github.com/arhansuba/solana-agentkit/issues)
-- Documentation: [Read the docs](https://solana-agentkit.readthedocs.io/)
-- Discord: [Join our community](#)
-
-## Acknowledgments
-
-- Solana Foundation
-- LangChain team
-- All contributors# solana-agentkit
+## If you have any questions, contact to me.
+Telegram <a href="https://t.me/Immutal0" target="_blank">@Immutal0</a>`
